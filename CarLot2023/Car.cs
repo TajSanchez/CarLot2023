@@ -6,14 +6,8 @@ using System.Threading.Tasks;
 
 namespace CarLot2023
 {
-    internal class Car
+    public class Car
     {
-
-        public Car()
-        {
-
-        }
-
         public string Make { get; set; }
 
         public string Model { get; set; }
@@ -26,6 +20,10 @@ namespace CarLot2023
 
         public bool IsDrivable { get; set; }
 
+        public Car()
+        {
+            CarLot.numberOfCars++;
+        }
 
         public Car(string make, string model, int year, string engineNoise, string honkNoise, bool isDrivable)
         {
@@ -35,6 +33,7 @@ namespace CarLot2023
             EngineNoise = engineNoise;
             HonkNoise = honkNoise;
             IsDrivable = isDrivable;
+            CarLot.numberOfCars++;
         }
 
         public void MakeEngineNoise()
